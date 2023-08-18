@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("azure-storage-files-datalake-cpp", max_pin="x") }}
 
@@ -23,8 +23,7 @@ requirements:
   host:
     - azure-core-cpp
     - azure-storage-common-cpp
-    # requires azure-storage-blobs-cpp >=12.7.0
-    - azure-storage-blobs-cpp
+    - azure-storage-blobs-cpp >=12.7.0
 
 test:
   requires:
