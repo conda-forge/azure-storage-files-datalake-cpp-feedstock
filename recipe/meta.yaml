@@ -1,5 +1,5 @@
-{% set version = "12.8.0" %}
-{% set sha256 = "95426f123ca085e7203a4217608f57a29ebdb6279e86b3c0d0163e43f9f4d166" %}
+{% set version = "12.9.0" %}
+{% set sha256 = "5932dab8de8b4318e8878388b58adbc81def3af380ecb0ae26af125f836d0b5c" %}
 
 package:
   name: azure-storage-files-datalake-cpp
@@ -23,7 +23,7 @@ requirements:
   host:
     - azure-core-cpp
     - azure-storage-common-cpp
-    - azure-storage-blobs-cpp >=12.9.0
+    - azure-storage-blobs-cpp >=12.10.0
 
 test:
   requires:
