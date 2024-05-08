@@ -24,7 +24,7 @@ requirements:
   host:
     - azure-core-cpp
     - azure-storage-common-cpp
-    - azure-storage-blobs-cpp >=12.10.0
+    - azure-storage-blobs-cpp >=12.11.0
 
 test:
   requires:
