@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("azure-storage-files-datalake-cpp", max_pin="x.x.x") }}
 
@@ -22,9 +22,10 @@ requirements:
     - cmake
     - ninja
   host:
+    # The azure-sdk-for-cpp libs are pinned in conda-forge-pinning-feedstock
     - azure-core-cpp
     - azure-storage-common-cpp
-    - azure-storage-blobs-cpp >=12.11.0
+    - azure-storage-blobs-cpp
 
 test:
   requires:
