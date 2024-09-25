@@ -1,5 +1,5 @@
-{% set version = "12.11.0" %}
-{% set sha256 = "5ead26574e195c58f47d0beff2517574511baa60e8968436b1685d930c0fc1c3" %}
+{% set version = "12.12.0" %}
+{% set sha256 = "b25d85a85b71d6a14b0321b3bfaeeb558ba4515c5ecf7a89c9696fdc8b4a6183" %}
 
 package:
   name: azure-storage-files-datalake-cpp
@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   run_exports:
     - {{ pin_subpackage("azure-storage-files-datalake-cpp", max_pin="x.x.x") }}
 
