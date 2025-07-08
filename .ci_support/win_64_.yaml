@@ -1,9 +1,9 @@
 azure_core_cpp:
-- 1.14.0
+- 1.15.0
 azure_storage_blobs_cpp:
 - 12.13.0
 azure_storage_common_cpp:
-- 12.8.0
+- 12.10.0
 c_stdlib:
 - vs
 channel_sources:
@@ -11,6 +11,6 @@ channel_sources:
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2019
+- vs2022
 target_platform:
 - win-64
