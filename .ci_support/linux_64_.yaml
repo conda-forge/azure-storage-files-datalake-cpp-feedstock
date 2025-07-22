@@ -1,7 +1,7 @@
 azure_core_cpp:
-- 1.15.0
+- 1.16.0
 azure_storage_blobs_cpp:
-- 12.13.0
+- 12.14.0
 azure_storage_common_cpp:
 - 12.10.0
 c_stdlib:
@@ -17,7 +17,7 @@ channel_targets:
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '13'
+- '14'
 docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:alma9
 target_platform:
