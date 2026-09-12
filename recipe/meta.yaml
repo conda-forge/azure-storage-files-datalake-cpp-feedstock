@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   run_exports:
     - {{ pin_subpackage("azure-storage-files-datalake-cpp", max_pin="x.x.x") }}
 
@@ -34,6 +34,7 @@ test:
     - ninja
   files:
     - CMakeLists.txt
+    - consumer  # [win and arm64]
   commands:
     # shared libs
     - test -f ${PREFIX}/lib/libazure-storage-files-datalake${SHLIB_EXT}   # [unix]
@@ -51,6 +52,11 @@ test:
     # CMake find_package()
     - cmake $CMAKE_ARGS -G Ninja -S $RECIPE_DIR -B test-find-package    # [unix]
     - cmake %CMAKE_ARGS% -G Ninja -S %RECIPE_DIR% -B test-find-package  # [win]
+    - cmake -S consumer -B consumer-build -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%"  # [win and arm64]
+    - cmake --build consumer-build  # [win and arm64]
+    - consumer-build\azure_datalake_consumer.exe  # [win and arm64]
+    - dumpbin /headers consumer-build\azure_datalake_consumer.exe | findstr /I /C:"AA64 machine (ARM64)"  # [win and arm64]
+    - dumpbin /headers %LIBRARY_BIN%\azure-storage-files-datalake.dll | findstr /I /C:"AA64 machine (ARM64)"  # [win and arm64]
 
 about:
   home: https://github.com/Azure/azure-sdk-for-cpp/
