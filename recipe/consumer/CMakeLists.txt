@@ -1,5 +1,0 @@
-cmake_minimum_required(VERSION 3.20)
-project(azure_datalake_consumer LANGUAGES CXX)
-find_package(azure-storage-files-datalake-cpp CONFIG REQUIRED)
-add_executable(azure_datalake_consumer main.cpp)
-target_link_libraries(azure_datalake_consumer PRIVATE Azure::azure-storage-files-datalake)
